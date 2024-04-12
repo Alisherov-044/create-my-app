@@ -1,0 +1,1 @@
+export { langSlice } from "./langSlice";

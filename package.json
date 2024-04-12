@@ -1,0 +1,22 @@
+{
+  "name": "create-my-app",
+  "version": "1.0.0",
+  "description": "create my app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "create-my-app",
+    "react-app",
+    "react-antd",
+    "react-tailwind",
+    "project-starter-react",
+    "react-cli-tool"
+  ],
+  "author": "Alisherov Sadulla",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.4.3"
+  }
+}

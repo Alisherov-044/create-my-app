@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+@layer base {
+    :root {
+        --primary-100: 0;
+
+        --shadow-main: 0;
+    }
+
+    *::-webkit-scrollbar {
+        @apply w-1 h-1 bg-transparent;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        @apply w-1 h-1 rounded;
+    }
+
+    html,
+    body,
+    #root {
+        @apply h-full;
+    }
+}
