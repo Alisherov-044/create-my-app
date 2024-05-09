@@ -1,8 +1,8 @@
-import { refreshUrl } from "@/utils/urls";
+import { refreshUrl } from "@/constants/urls";
 import type { AxiosInstance } from "axios";
 import { setAuth } from "@/redux/slices/authSlice";
 import { useDispatch, useSelector } from "@/hooks";
-import { useCallback, useEffect, useMemo } from "react";
+import { useCallback, useEffect } from "react";
 import type { UseInterceptorsResponse } from "@/types/hooks";
 
 export function useInterceptors(
@@ -10,9 +10,9 @@ export function useInterceptors(
     axiosPrivateInstance: AxiosInstance
 ): UseInterceptorsResponse {
     const dispatch = useCallback(useDispatch(), []);
-    const { accessToken, refreshToken, ...rest } = useMemo(() => {
-        return useSelector((state) => state.auth);
-    }, []);
+    const { accessToken, refreshToken, ...rest } = useSelector(
+        (state) => state.auth
+    );
 
     useEffect(() => {
         const responseInterceptorInstance =

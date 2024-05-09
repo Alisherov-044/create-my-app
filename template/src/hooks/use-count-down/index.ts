@@ -1,13 +1,9 @@
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import type { UseCountDownResponse } from "@/types/hooks";
 
 export function useCountDown(initialTime: number): UseCountDownResponse {
-    const [time, setTime] = useMemo(() => {
-        return useState<number>(initialTime);
-    }, [initialTime]);
-    const [isActive, setIsActive] = useMemo(() => {
-        return useState<boolean>(false);
-    }, []);
+    const [time, setTime] = useState<number>(initialTime);
+    const [isActive, setIsActive] = useState<boolean>(false);
 
     useEffect(() => {
         let interval: NodeJS.Timeout;

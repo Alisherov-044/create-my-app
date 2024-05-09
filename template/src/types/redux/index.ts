@@ -1,4 +1,5 @@
 import { store } from "@/redux";
+import type { Language, Theme } from "@/enums";
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
@@ -10,5 +11,9 @@ export type AuthState = {
 };
 
 export type LangState = {
-    currentLang: string;
+    lang: Language;
+};
+
+export type ThemeState = {
+    theme: Theme;
 };

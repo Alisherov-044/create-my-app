@@ -1,10 +1,8 @@
+import { useCallback, useState } from "react";
 import type { UseOpenResponse } from "@/types/hooks";
-import { useCallback, useMemo, useState } from "react";
 
 export function useOpen(defaultValue: boolean = false): UseOpenResponse {
-    const [isOpen, setIsOpen] = useMemo(() => {
-        return useState<boolean>(defaultValue);
-    }, [defaultValue]);
+    const [isOpen, setIsOpen] = useState<boolean>(defaultValue);
 
     const open = useCallback(() => setIsOpen(true), []);
     const close = useCallback(() => setIsOpen(false), []);

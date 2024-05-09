@@ -1,14 +1,12 @@
+import { useCallback } from "react";
 import { useLocalstorage } from "@/hooks";
-import { useCallback, useMemo } from "react";
 import type { UsePaginationResponse } from "@/types/hooks";
 
 export function usePagination(
     key: string,
     totalPages: number
 ): UsePaginationResponse {
-    const [currentPage, setCurrentPage] = useMemo(() => {
-        return useLocalstorage<number>(key, 1);
-    }, [key]);
+    const [currentPage, setCurrentPage] = useLocalstorage<number>(key, 1);
 
     const next = useCallback(() => {
         if (currentPage < totalPages) {

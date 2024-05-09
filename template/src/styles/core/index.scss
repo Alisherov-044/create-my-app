@@ -4,9 +4,19 @@
 
 @layer base {
     :root {
-        --primary-100: 0;
+        --primary-100: #000;
 
         --shadow-main: 0;
+    }
+
+    [theme="dark"] {
+        --primary-100: #fff;
+    }
+
+    @media only screen and (prefers-color-scheme: dark) {
+        [theme="system"] {
+            --primary-100: #fff;
+        }
     }
 
     *::-webkit-scrollbar {

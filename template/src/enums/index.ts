@@ -4,8 +4,14 @@ export enum Role {
     student = Number(import.meta.env.STUDENT_ROLE_ID),
 }
 
-export enum Languages {
+export enum Language {
     uz = "uz",
     ru = "ru",
     en = "en",
+}
+
+export enum Theme {
+    light = "light",
+    dark = "dark",
+    system = "system",
 }

@@ -11,9 +11,7 @@ export function useLocalstorage<T>(
         );
     }, [key, defaultValue]);
 
-    const [state, setState] = useMemo(() => {
-        return useState<T>(current);
-    }, [current]);
+    const [state, setState] = useState<T>(current);
 
     useEffect(() => {
         setState(current);

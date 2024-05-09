@@ -18,5 +18,5 @@ export type RequireAuthProps = {
 };
 
 export type LoadingProps = {
-    fallback: ReactNode;
+    fallback?: ReactNode;
 };

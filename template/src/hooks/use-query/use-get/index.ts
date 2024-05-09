@@ -1,12 +1,9 @@
-import { useMemo } from "react";
 import { useAxios } from "@/hooks";
 import { useQuery } from "react-query";
 import type { AxiosError, AxiosResponse } from "axios";
 
 export function useGetPublic<TResponse>(url: string, key?: string) {
-    const { axiosPublic } = useMemo(() => {
-        return useAxios();
-    }, []);
+    const { axiosPublic } = useAxios();
 
     const {
         data: res,
@@ -26,9 +23,7 @@ export function useGetPublic<TResponse>(url: string, key?: string) {
 }
 
 export function useGetPrivate<TResponse>(url: string, key?: string) {
-    const { axiosPrivate } = useMemo(() => {
-        return useAxios();
-    }, []);
+    const { axiosPrivate } = useAxios();
 
     const {
         data: res,

@@ -9,12 +9,8 @@ export function useTranslate(defaultLng?: string): UseTranslateResponse {
     const browserLng = useMemo(() => {
         return navigator.language;
     }, [navigator.language]);
-    const { t: translate, i18n } = useMemo(() => {
-        return useTranslation();
-    }, []);
-    const { currentLang: selectedLang } = useMemo(() => {
-        return useSelector((state) => state.lang);
-    }, []);
+    const { t: translate, i18n } = useTranslation();
+    const { lang: selectedLang } = useSelector((state) => state.lang);
     const currentLng = useMemo(() => {
         return defaultLng ?? selectedLang ?? browserLng;
     }, [defaultLng, selectedLang, browserLng]);

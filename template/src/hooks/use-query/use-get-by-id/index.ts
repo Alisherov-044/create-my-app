@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { useAxios } from "@/hooks";
 import { useQuery } from "react-query";
 import type { AxiosError, AxiosResponse } from "axios";
@@ -8,9 +7,7 @@ export function useGetByIdPublic<TResponse>(
     id?: number,
     key?: string
 ) {
-    const { axiosPublic } = useMemo(() => {
-        return useAxios();
-    }, []);
+    const { axiosPublic } = useAxios();
 
     const {
         data: res,
@@ -35,9 +32,7 @@ export function useGetByIdPrivate<TResponse>(
     id?: number,
     key?: string
 ) {
-    const { axiosPrivate } = useMemo(() => {
-        return useAxios();
-    }, []);
+    const { axiosPrivate } = useAxios();
 
     const {
         data: res,

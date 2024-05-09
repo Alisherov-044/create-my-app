@@ -1,6 +1,7 @@
+import { useMemo } from "react";
 import { useSelector } from "@/hooks";
-import { Navigate, Outlet, useLocation } from "react-router-dom";
 import type { RequireAuthProps } from "@/types/components";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 export function RequireAuth({ roles }: RequireAuthProps) {
     const location = useLocation();
@@ -13,7 +14,9 @@ export function RequireAuth({ roles }: RequireAuthProps) {
     // never ever check if (!!accessToken) { then do something }
     // send request to POST /auth/check/ -> headers `Bearer ${accessToken}`
     // then store the response in isAuthenticated variable
-    const isAuthenticated = !!accessToken; // this is just boilerplate, do not keep this code as it is!
+    const isAuthenticated = useMemo(() => {
+        return !!accessToken;
+    }, [accessToken]); // this is just boilerplate, do not keep this code as it is!
 
     if (!isAuthenticated) {
         return <Navigate to="/login" state={{ from: location }} replace />;

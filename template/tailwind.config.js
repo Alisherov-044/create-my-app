@@ -3,7 +3,11 @@ export default {
     content: ["./index.html", "./src/**/*.{ts,tsx}"],
     theme: {
         extend: {
-            colors: {},
+            colors: {
+                primary: {
+                    100: "var(--primary-100)",
+                },
+            },
             boxShadow: {},
         },
     },

@@ -1,8 +1,10 @@
+import { produce } from "immer";
+import { Language } from "@/enums";
 import { createSlice } from "@reduxjs/toolkit";
 import type { LangState } from "@/types/redux";
 
 const initialState: LangState = {
-    currentLang: "uz",
+    lang: Language.uz,
 };
 
 export const langSlice = createSlice({
@@ -10,7 +12,9 @@ export const langSlice = createSlice({
     initialState,
     reducers: {
         setLang: (state, { payload }) => {
-            state.currentLang = payload;
+            return produce(state, (draft) => {
+                draft.lang = payload;
+            });
         },
     },
 });

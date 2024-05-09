@@ -1,20 +1,18 @@
-import { baseURL } from "@/utils/urls";
+import { baseURL } from "@/constants/urls";
 import axios, { type AxiosInstance } from "axios";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useInterceptors, useSelector } from "@/hooks";
 import type { AuthState } from "@/types/redux";
 import type { UseAxiosResponse } from "@/types/hooks";
 
 export function useAxios(): UseAxiosResponse {
-    const { accessToken } = useMemo(() => {
-        return useSelector<AuthState>((state) => state.auth);
-    }, []);
-    const [axiosPublic, setAxiosPublic] = useMemo(() => {
-        return useState<AxiosInstance>(axios.create({}));
-    }, []);
-    const [axiosPrivate, setAxiosPrivate] = useMemo(() => {
-        return useState<AxiosInstance>(axios.create({}));
-    }, []);
+    const { accessToken } = useSelector<AuthState>((state) => state.auth);
+    const [axiosPublic, setAxiosPublic] = useState<AxiosInstance>(
+        axios.create({})
+    );
+    const [axiosPrivate, setAxiosPrivate] = useState<AxiosInstance>(
+        axios.create({})
+    );
 
     useEffect(() => {
         setAxiosPublic(

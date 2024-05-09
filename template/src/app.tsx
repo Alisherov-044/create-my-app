@@ -1,44 +1,62 @@
 import { routes } from "@/routes";
-import { Suspense } from "react";
+import { useSelector } from "@/hooks";
 import { Route, Routes } from "react-router-dom";
+import { Suspense, useEffect } from "react";
 import { Layout, Loading, RequireAuth } from "@/components";
 
 export function App() {
+    const { theme } = useSelector((state) => state.theme);
+    const { lang } = useSelector((state) => state.lang);
+
+    useEffect(() => {
+        document.querySelector("html")?.setAttribute("theme", theme);
+    }, [theme]);
+
+    useEffect(() => {
+        document.querySelector("html")?.setAttribute("lang", lang);
+    }, [lang]);
+
     return (
-        <Routes>
-            <Route path="/" element={<Layout />}>
-                {routes.private.map(
-                    ({ id, path, element, fallback, roles }) => (
-                        <Route key={id} element={<RequireAuth roles={roles} />}>
+        <>
+            <h1 className="text-primary-100">hallo</h1>
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    {routes.private.map(
+                        ({ id, path, element, fallback, roles }) => (
                             <Route
-                                path={path}
-                                element={
-                                    <Suspense
-                                        fallback={
-                                            <Loading fallback={fallback} />
-                                        }
-                                    >
-                                        {element}
-                                    </Suspense>
-                                }
-                            />
-                        </Route>
-                    )
-                )}
-                {routes.public.map(({ id, path, element, fallback }) => (
-                    <Route
-                        key={id}
-                        path={path}
-                        element={
-                            <Suspense
-                                fallback={<Loading fallback={fallback} />}
+                                key={id}
+                                element={<RequireAuth roles={roles} />}
                             >
-                                {element}
-                            </Suspense>
-                        }
-                    />
-                ))}
-            </Route>
-        </Routes>
+                                <Route
+                                    path={path}
+                                    element={
+                                        <Suspense
+                                            fallback={
+                                                <Loading fallback={fallback} />
+                                            }
+                                        >
+                                            {element}
+                                        </Suspense>
+                                    }
+                                />
+                            </Route>
+                        )
+                    )}
+                    {routes.public.map(({ id, path, element, fallback }) => (
+                        <Route
+                            key={id}
+                            path={path}
+                            element={
+                                <Suspense
+                                    fallback={<Loading fallback={fallback} />}
+                                >
+                                    {element}
+                                </Suspense>
+                            }
+                        />
+                    ))}
+                </Route>
+            </Routes>
+        </>
     );
 }

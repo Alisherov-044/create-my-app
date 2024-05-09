@@ -1,3 +1,4 @@
+import { produce } from "immer";
 import type { AuthState } from "@/types/redux";
 import { type PayloadAction, createSlice } from "@reduxjs/toolkit";
 
@@ -8,7 +9,11 @@ export const authSlice = createSlice({
     initialState,
     reducers: {
         setAuth: (state, { payload }: PayloadAction<AuthState>) => {
-            return (state = payload);
+            return produce(state, (draft) => {
+                draft.accessToken = payload.accessToken;
+                draft.refreshToken = payload.refreshToken;
+                draft.roles = payload.roles;
+            });
         },
     },
 });

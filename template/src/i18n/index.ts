@@ -1,5 +1,5 @@
 import i18n from "i18next";
-import { Languages } from "@/enums";
+import { Language } from "@/enums";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
@@ -16,7 +16,7 @@ export const translations = {
     },
 };
 
-function getTrasnslation(key: Languages) {
+function getTrasnslation(key: Language) {
     return Object.assign(
         {},
         ...Object.entries(translations).map((item) => ({
@@ -27,13 +27,13 @@ function getTrasnslation(key: Languages) {
 
 export const resources = {
     uz: {
-        translation: getTrasnslation(Languages.uz),
+        translation: getTrasnslation(Language.uz),
     },
     en: {
-        translation: getTrasnslation(Languages.en),
+        translation: getTrasnslation(Language.en),
     },
     ru: {
-        translation: getTrasnslation(Languages.ru),
+        translation: getTrasnslation(Language.ru),
     },
 };
 

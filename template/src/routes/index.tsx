@@ -1,7 +1,7 @@
 import { Role } from "@/enums";
 import type { TRoutes } from "@/types/routes";
 
-const userRoles = {
+export const userRoles = {
     admin: [Role.admin],
     teacher: [Role.teacher],
     student: [Role.student],
