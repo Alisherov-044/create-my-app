@@ -1,8 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-export type LangState = {
-    currentLang: string;
-};
+import type { LangState } from "@/types/redux";
 
 const initialState: LangState = {
     currentLang: "uz",

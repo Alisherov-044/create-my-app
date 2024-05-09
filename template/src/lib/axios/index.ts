@@ -1,11 +1,4 @@
 import axios from "axios";
+import { baseURL } from "@/utils/urls";
 
-const baseURL = import.meta.env.VITE_BASE_URL;
-
-export const axiosPublic = axios.create({
-    baseURL,
-});
-
-export const axiosPrivate = axios.create({
-    baseURL,
-});
+export const Axios = axios.create({ baseURL });

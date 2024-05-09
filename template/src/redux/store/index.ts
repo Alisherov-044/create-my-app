@@ -1,15 +1,17 @@
 import storage from "redux-persist/lib/storage";
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { langSlice } from "@/redux/slices";
 import { persistReducer, persistStore } from "redux-persist";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { authSlice, langSlice } from "@/redux/slices";
 
 const persistConfig = {
     key: "root",
     storage,
+    whitelist: ["lang", "auth"],
 };
 
 const rootReducer = combineReducers({
     lang: langSlice.reducer,
+    auth: authSlice.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -23,5 +25,3 @@ export const store = configureStore({
 });
 
 export const persister = persistStore(store);
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;

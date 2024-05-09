@@ -1,1 +1,1 @@
-export { axiosPublic, axiosPrivate } from "./axios";
+export { Axios } from "./axios";

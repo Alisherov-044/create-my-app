@@ -1,6 +1,6 @@
-import "@/styles/index.css";
+import "@/styles";
 import ReactDOM from "react-dom/client";
-import { App } from "./app";
+import { App } from "@/app";
 import { ConfigProvider } from "antd";
 import { Provider } from "react-redux";
 import { persister, store } from "@/redux";

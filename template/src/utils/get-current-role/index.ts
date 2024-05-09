@@ -1,4 +1,5 @@
-import { Role, type TRole } from "@/types";
+import { Role } from "@/enums";
+import type { TRole } from "@/types";
 
 const userRoles = {
     [Role.admin]: "admin",

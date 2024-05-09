@@ -1,8 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
+import type { UseCountDownResponse } from "@/types/hooks";
 
-export function useCountDown(initialTime: number) {
-    const [time, setTime] = useState(initialTime);
-    const [isActive, setIsActive] = useState(false);
+export function useCountDown(initialTime: number): UseCountDownResponse {
+    const [time, setTime] = useMemo(() => {
+        return useState<number>(initialTime);
+    }, [initialTime]);
+    const [isActive, setIsActive] = useMemo(() => {
+        return useState<boolean>(false);
+    }, []);
 
     useEffect(() => {
         let interval: NodeJS.Timeout;
@@ -18,18 +23,18 @@ export function useCountDown(initialTime: number) {
         return () => clearInterval(interval);
     }, [isActive, time]);
 
-    const start = () => {
+    const start = useCallback((): void => {
         setIsActive(true);
-    };
+    }, []);
 
-    const stop = () => {
+    const stop = useCallback((): void => {
         setIsActive(false);
-    };
+    }, []);
 
-    const reset = () => {
+    const reset = useCallback((): void => {
         setIsActive(false);
         setTime(initialTime);
-    };
+    }, [initialTime]);
 
     return { time, start, stop, reset };
 }
