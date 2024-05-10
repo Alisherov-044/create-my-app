@@ -1,6 +1,6 @@
 {
     "name": "create-my-react-ts-app",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "create my app",
     "main": "index.js",
     "type": "module",
