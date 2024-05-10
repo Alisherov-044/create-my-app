@@ -49,7 +49,7 @@ react-app/
 
 ## Contributing
 
-Contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request on the [GitHub repository](https://github.com/Alisherov-044/create-my-react-ts-app).
+Contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request on the [GitHub repository](https://github.com/Alisherov-044/create-my-app/tree/main/template).
 
 ## License
 
