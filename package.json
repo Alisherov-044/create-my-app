@@ -1,11 +1,22 @@
 {
-    "name": "create-my-app",
+    "name": "create-my-react-ts-app",
     "version": "1.0.0",
     "description": "create my app",
     "main": "index.js",
     "type": "module",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:Alisherov-044/create-my-app.git"
+    },
+    "bin": {
+        "create-my-react-ts-app": "./dist/src/index.js"
+    },
+    "files": [
+        "./src",
+        "./template"
+    ],
     "scripts": {
-        "start": "tsc && node dist/src/index.js"
+        "start": "tsc && node --experimental-specifier-resolution=node dist/src/index.js"
     },
     "keywords": [
         "create-my-app",
