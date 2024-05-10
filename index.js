@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-function copyFolderRecursiveSync(source: string, target: string) {
+function copyFolderRecursiveSync(source, target) {
     const files = fs.readdirSync(source);
 
     if (!fs.existsSync(target)) {
@@ -20,10 +20,10 @@ function copyFolderRecursiveSync(source: string, target: string) {
     });
 }
 
-function execute(source: string, target: string) {
-    console.log(`Copying files to ${target}...`);
-    copyFolderRecursiveSync(source, target);
-    console.log(`Copying to ${target} complete.`);
+function execute() {
+    console.log(`Copying files to react-app/...`);
+    copyFolderRecursiveSync("./template", "./react-app");
+    console.log(`Copying to react-app/ complete.`);
 }
 
-execute("./template", ".");
+execute();

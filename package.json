@@ -1,7 +1,7 @@
 {
     "name": "create-my-react-ts-app",
     "version": "1.0.5",
-    "description": "create my app",
+    "description": "create my react.ts app",
     "main": "index.js",
     "type": "module",
     "repository": {
@@ -9,18 +9,16 @@
         "url": "git@github.com:Alisherov-044/create-my-app.git"
     },
     "bin": {
-        "create-my-react-ts-app": "./dist/src/index.js"
+        "create-my-react-ts-app": "index.js"
     },
     "files": [
-        "./src",
-        "./template",
-        "./dist"
+        "./template"
     ],
     "scripts": {
-        "start": "tsc && node dist/src/index.js"
+        "start": "node index.js"
     },
     "keywords": [
-        "create-my-app",
+        "create-my-react-ts-app",
         "react-app",
         "react-antd",
         "react-tailwind",
@@ -29,10 +27,6 @@
     ],
     "author": "Alisherov Sadulla",
     "license": "ISC",
-    "dependencies": {
-        "typescript": "^5.4.3"
-    },
-    "devDependencies": {
-        "@types/node": "^20.12.11"
-    }
+    "dependencies": {},
+    "devDependencies": {}
 }
