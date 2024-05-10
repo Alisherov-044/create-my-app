@@ -12,6 +12,7 @@
         "create-my-react-ts-app": "./index.js"
     },
     "files": [
+        "./index.js",
         "./template"
     ],
     "scripts": {
