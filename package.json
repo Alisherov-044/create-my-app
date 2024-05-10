@@ -9,13 +9,13 @@
         "url": "git@github.com:Alisherov-044/create-my-app.git"
     },
     "bin": {
-        "create-my-react-ts-app": "index.js"
+        "create-my-react-ts-app": "./index.js"
     },
     "files": [
         "./template"
     ],
     "scripts": {
-        "start": "node index.js"
+        "start": "node --experimental-specifier-resolution=node index.js"
     },
     "keywords": [
         "create-my-react-ts-app",
