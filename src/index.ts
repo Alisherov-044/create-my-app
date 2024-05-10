@@ -1,8 +1,5 @@
 import fs from "fs";
 import path from "path";
-import { Command } from "commander";
-
-const program = new Command();
 
 function copyFolderRecursiveSync(source: string, target: string) {
     const files = fs.readdirSync(source);
@@ -29,10 +26,4 @@ function execute(source: string, target: string) {
     console.log(`Copying to ${target} complete.`);
 }
 
-program
-    .argument("<string>", "folder to initialize project")
-    .action((path) => {
-        execute("./template", path);
-    })
-    .description("Initialize project")
-    .parse(process.argv);
+execute("./template", ".");
