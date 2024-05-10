@@ -1,14 +1,16 @@
 {
     "compilerOptions": {
         "target": "es2016",
-        "module": "commonjs",
+        "module": "ESNext",
         "rootDir": "./",
         "baseUrl": "./src",
-        "outFile": "./",
         "outDir": "./dist",
+        "moduleResolution": "Bundler",
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true,
         "skipLibCheck": true
-    }
+    },
+    "include": ["src"],
+    "exclude": ["template"]
 }

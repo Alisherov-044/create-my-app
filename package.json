@@ -1,22 +1,27 @@
 {
-  "name": "create-my-app",
-  "version": "1.0.0",
-  "description": "create my app",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "create-my-app",
-    "react-app",
-    "react-antd",
-    "react-tailwind",
-    "project-starter-react",
-    "react-cli-tool"
-  ],
-  "author": "Alisherov Sadulla",
-  "license": "ISC",
-  "dependencies": {
-    "typescript": "^5.4.3"
-  }
+    "name": "create-my-app",
+    "version": "1.0.0",
+    "description": "create my app",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "tsc && node dist/src/index.js"
+    },
+    "keywords": [
+        "create-my-app",
+        "react-app",
+        "react-antd",
+        "react-tailwind",
+        "project-starter-react",
+        "react-cli-tool"
+    ],
+    "author": "Alisherov Sadulla",
+    "license": "ISC",
+    "dependencies": {
+        "commander": "^12.0.0",
+        "typescript": "^5.4.3"
+    },
+    "devDependencies": {
+        "@types/node": "^20.12.11"
+    }
 }
